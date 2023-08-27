@@ -106,7 +106,6 @@ export const getExtensions = ({ openLinkModal }: GetExtensionsProps) => {
       uploadFn: async (image: any) => {
         if (image.name) {
           const imageRef = ref(storage, `images/${image?.name + v4()}`);
-
           try {
             const snapshot = await uploadBytes(imageRef, image);
             const url = await getDownloadURL(snapshot.ref);
